@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M&auml;hrisch und B&ouml;hmisch Wiesen im Sch&ouml;nhengstgau</title>
+    <link rel="stylesheet" type="text/css" href="/res/style.css">
+    <link rel="icon" href="/pic/icon.png">
+
+    <script src="/res/http.js"></script>
+    <script src="/res/frame.js"></script>
+</head>
+<body>
+
+<script>
+    let isHome = false;
+</script>
+
+<table id="frame">
+    <tr>
+        <td class="fe" id="logo">
+            <img src="/pic/logo.pngg" id="icon">
+        </td>
+        <td class="fe" id="header">
+            <p id="header-text">M&auml;hrisch und B&ouml;hmisch Wiesen im Sch&ouml;nhengstgau</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="fe" id="pages">
+            <!--
+            <div class="page-item" onclick="goto('mw/maehrisch-wiesen')">M&auml;hrisch Wiesen</div>
+            <div class="page-item active">Geschichte von M&auml;hrisch Wiesen</div>
+            <div class="page-item">Volksz&auml;hlungen</div>
+            <div class="page-item">Der Menschenschlag von M&auml;hrisch Wiesen</div>
+            -->
+        </td>
+        <td class="fe" id="content">
+
+<!------------------------------------------------------------------------------------------------------>
+
+<h1 class="headline">Herzlich Willkommen</h1>
+
+<p>
+    Willkommen auf der Wiesen-Website!<br>
+    Diese Website befasst sich mit den zwei Ortschaften Mährisch und Böhmisch Wiesen nahe der Stadt Brüsau im Schönhengstgau. Die beiden Gemeinden waren ursprünglich einmal eine, wurden jedoch im Zuge der Landesgrenzeneinteilung geteilt und waren seither zwei selbstständige Gemeinden: Einmal Böhmisch-Wiesen mit einem eigenen Bürgermeister und Mährisch-Wiesen, welches politisch zu Musslau gehörte und mit diesem Ort einen gemeinsamen Vorstand hatte. Doch gesellschaftlich fühlten sich die beiden Gemeinden immer als eine Einheit. So gingen sie gemeinsam auf Feuerwehrfeste, in Vereine oder in die Volksschule Böhmisch-Wiesen. Schicksalshaft ist jedoch, dass die beiden Ortschaften seit 1950 zusammen mit Musslau nach vielen Jahrhunderten auch politisch wieder vereint sind.
+</p>
+<p>
+    Diese Website dient dem Erhalt der Erinnerung und der Geschichte dieser Ortschaften. Wir hoffen, Ihnen einen kleinen Einblick in die Kultur und die Geschichte der beiden Ortschaften geben zu können und Ihr Interesse geweckt zu haben.
+</p>
+<div class="pic-row"><img class="content" src="/pic/wiesen-karte1.pngg"></div>
+<p>
+    Ich bin seit September 2020 mit 12 Jahren der jüngste Ortsberichterstatter des Schönhengster Heimatbundes für den Ort Mährisch-Wiesen. Daher bin ich immer auf der Suche nach Informationen, Bildern und Nachfahren der ehemaligen Bewohner. Falls Sie mir in dieser Sache helfen können, sehen Sie bitte bei <a href="/oth/kontakt">Kontakt</a> nach.
+</p>
+<p>
+    Viel Spaß beim Stöbern!<br>
+    Wünscht Ihnen Jakob.
+</p>
+
+<script>isHome = true</script>
+
+
+<!------------------------------------------------------------------------------------------------------>
+
+
+
+        </td>
+    </tr>
+</table>
+
+<script>
+    const url = window.location.href;
+    const up = url.split("/");
+    const pageName = up[up.length-2] + "/" + up[up.length-1];
+    console.log(pageName);
+
+    pages([
+        ["Home", "oth/home", ""],
+        ["---"],
+        ["M&auml;hrisch und B&ouml;hmisch Wiesen im Sch&ouml;nhengstgau", "mw/maehrisch-wiesen", ""],
+        ["Geschichte von M&auml;hrisch Wiesen", "mw/geschichte-von-maehrisch-wiesen", ""],
+        ["Volksz&auml;hlungen", "mw/volkszaehlungen", ""],
+        ["Der Menschenschlag von M&auml;hrisch Wiesen", "mw/der-menschenschlag-von-maehrisch-wiesen", ""],
+        ["---"],
+        ["Genealogie", "oth/genealogie", "text-book.png"],
+        ["Kontakt", "oth/kontakt", ""]
+    ], "view.jpg", pageName);
+
+    if (isHome) document.getElementsByTagName("title")[0].innerHTML = "Wiesen im Sch&ouml;nengstgau";
+</script>
+
+<script>
+    /*console.log(window.location.href.toString());
+    if (window.location.href.toString().includes("jupiterpi")) alert("Du hast in deiner URL von JupiterPi gesprochen und willst dementsprechend wahrscheinlich zu mir. Vielleicht wolltest du jupi-downloads.servegame.com aufrufen?");*/
+    // ^^ outdated
+</script>
+
+</body>
+</html>

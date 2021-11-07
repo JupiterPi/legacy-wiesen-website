@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warnung für Mobilgeräte</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<table class="grid">
+    <tr class="grid"><td class="grid" id="top">
+        Warnung für Mobilgeräte
+    </td></tr>
+    <tr class="grid"><td class="grid" id="middle">
+        Diese Seite ist nicht für Mobilgeräte optimiert. Es können also Anzeigefehler auftreten. Rufen Sie die Seite auf ihrem PC oder Laptop auf, um sie voll zu genießen.
+    </td></tr>
+    <tr class="grid"><td class="grid" id="bottom">
+        <button id="btn" class="" onclick="allowMobile()">TROTZDEM FORTFAHREN</button>
+    </td></tr>
+</table>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+:roooo_old_ooot {
+    --c-secondary: #345853;
+    --c-primary: #c9eae9;
+    --c-primary-alt: #85c6af;
+}
+
+:root {
+    --c-primary: black;
+    --c-secondary: white;
+    --c-primary-alt: grey;
+}
+
+body {
+    background-color: var(--c-secondary);
+    color: var(--c-primary);
+    font-family: 'Roboto Slab', serif;
+}
+
+table.grid {
+    height: 80vh;
+    width: 98vw;
+}
+
+td.grid {
+    text-align: center;
+    padding: 0px 10vw;
+}
+
+td#top {
+    vertical-align: bottom;
+    font-size: 6.5vh;
+    font-family: 'Playfair Display', serif;
+}
+
+td#middle {
+    vertical-align: center;
+    font-size: 3vh;
+}
+
+td#bottom {
+    vertical-align: center;
+    font-size: 5vh;
+}
+
+#btn {
+    height: 15vh;
+    width: 80vw;
+    background-color: var(--c-primary);
+    border-style: none;
+    font-size: 4vh;
+    font-family: 'Playfair Display', serif;
+    color: var(--c-secondary);
+}
+
+#btn.active {
+    background-color: var(--c-primary-alt);
+}
+
+</style>
+
+<script>
+
+function allowMobile() {
+    const button = document.getElementById("btn");
+    button.classList.add("active");
+
+    window.location.href = "/allowMobile";
+}
+
+</script>
+
+</body>
+</html>

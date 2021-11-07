@@ -1,0 +1,28 @@
+table.t {
+    border-collapse: collapse;
+}
+
+table.t td {
+    border: solid black 1px;
+}
+
+table.t td:last-child {
+    border-right: none;
+}
+
+table.t td:first-child {
+    border-left: none;
+}
+
+table.t tr:first-child td {
+    border-top: none;
+    font-weight: bold;
+}
+
+table.t tr:last-child td {
+    border-bottom: none;
+}
+
+table.t td {
+    padding: 7px;
+}
