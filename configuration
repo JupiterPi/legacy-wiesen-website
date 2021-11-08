@@ -1,9 +1,0 @@
-activate-bot: false
-bot-token: NzgzNzg4NTg5MDkwNzM0MTAx.X8f2AQ.p7GcLfpltYge2_9hewNx4s1R2HY
-guild-id: 783789283772727296
-ping-channel-id: 783793892180754452
-messages-channel-id: 783790278800310372
-
-notify-visits: false
-visits-channel-id: 848231375358525441
-new-visits-channel-id: 848231890129387540

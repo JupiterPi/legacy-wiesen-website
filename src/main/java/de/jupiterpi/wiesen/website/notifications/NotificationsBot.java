@@ -1,6 +1,6 @@
 package de.jupiterpi.wiesen.website.notifications;
 
-import de.jupiterpi.wiesen.website.ConfigFile;
+import de.jupiterpi.wiesen.website.files.ConfigFile;
 import de.jupiterpi.wiesen.website.analytics.Visit;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;

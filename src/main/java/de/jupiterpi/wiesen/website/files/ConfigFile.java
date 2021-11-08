@@ -1,4 +1,4 @@
-package de.jupiterpi.wiesen.website;
+package de.jupiterpi.wiesen.website.files;
 
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConfigFile {
-    private static final Path configFilePath = Path.getRunningDirectory().file("configuration");
+    public static Path configFilePath = Path.getRunningDirectory().file("configuration");  // example-configuration
 
     private static Map<String, String> properties = new HashMap<>();
 
