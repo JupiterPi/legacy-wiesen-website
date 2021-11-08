@@ -1,13 +1,12 @@
 package de.jupiterpi.wiesen.website.notifications.messages;
 
-import jupiterpi.tools.files.Path;
+import de.jupiterpi.wiesen.website.files.Storage;
 import jupiterpi.tools.files.csv.CSVObjectsFile;
 
 import java.util.List;
 
 public class MessagesStorage {
-    private final Path storageDir = Path.getRunningDirectory().subdir("storage");
-    private final CSVObjectsFile<Message> messagesFile = new CSVObjectsFile<>(storageDir.copy().file("messages.csv"), Message.class);
+    private final CSVObjectsFile<Message> messagesFile = new CSVObjectsFile<>(Storage.messagesFile, Message.class);
 
     public List<Message> getMessages() {
         return messagesFile.getObjects();

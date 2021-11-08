@@ -1,4 +1,4 @@
-activate-bot: true
+activate-bot: false
 bot-token: NzgzNzg4NTg5MDkwNzM0MTAx.X8f2AQ.p7GcLfpltYge2_9hewNx4s1R2HY
 guild-id: 783789283772727296
 ping-channel-id: 783793892180754452

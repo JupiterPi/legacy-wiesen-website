@@ -2,6 +2,7 @@ package de.jupiterpi.wiesen.website.analytics;
 
 import de.jupiterpi.wiesen.website.App;
 import de.jupiterpi.wiesen.website.notifications.NotificationsBot;
+import de.jupiterpi.wiesen.website.files.Storage;
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
 import jupiterpi.tools.files.csv.CSVCastable;
@@ -14,8 +15,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Visit implements CSVCastable {
-    private static final Path visitsFile = Path.getRunningDirectory().subdir("storage").file("visits.csv");
-    private static final Path formattedVisitsFile = Path.getRunningDirectory().subdir("storage").file("formatted-visits.csv");
+    private static final Path visitsFile = Storage.visitsFile;
+    private static final Path formattedVisitsFile = Storage.formattedVisitsFile;
     private static NotificationsBot bot = App.bot;
 
     private String profilingId;
