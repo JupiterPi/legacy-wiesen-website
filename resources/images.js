@@ -1,7 +1,7 @@
 let stylesheet = document.createElement("link");
 stylesheet.setAttribute("rel", "stylesheet");
 stylesheet.setAttribute("type", "text/css");
-stylesheet.setAttribute("href", "/res/temp-images-pre.css");
+stylesheet.setAttribute("href", "/res/images.css");
 document.getElementById("head").appendChild(stylesheet);
 
 function captionTest1() {
