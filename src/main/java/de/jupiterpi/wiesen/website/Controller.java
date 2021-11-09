@@ -2,19 +2,16 @@ package de.jupiterpi.wiesen.website;
 
 import de.jupiterpi.wiesen.website.analytics.Visit;
 import jupiterpi.tools.files.TextFile;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.HandlerMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 import java.util.UUID;
 
 @RestController
@@ -121,22 +118,8 @@ public class Controller {
     // text
     @GetMapping("/res/{filename}")
     public String getResource(@PathVariable String filename) {
-        return loader.getTextResource(filename);
+        return loader.getResource(filename);
     }
-
-    // pic
-    /*@GetMapping("/pic/{filename}")
-    public ResponseEntity<byte[]> getPic(@PathVariable String filename, HttpServletResponse response) {
-        String[] filenameParts = filename.split("\\.");
-        response.setContentType("image/" + filenameParts[filenameParts.length-1]);
-        return loader.getPictureResource("pic", filename);
-    }*/
-
-    // header-pic
-    /*@GetMapping("/header-pic/{name}")
-    public ResponseEntity<byte[]> getHeaderPic(@PathVariable String name) {
-        return loader.getPictureResource("header-pic", name);
-    }*/
 
     // pic redirects
     @GetMapping("/pic/{filename}")

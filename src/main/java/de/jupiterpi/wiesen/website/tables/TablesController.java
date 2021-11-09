@@ -1,5 +1,6 @@
 package de.jupiterpi.wiesen.website.tables;
 
+import de.jupiterpi.wiesen.website.files.Files;
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.WrongPathTypeException;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import java.io.IOException;
 public class TablesController {
     private TablesLoader loader = new TablesLoader();
 
-    private final Path tablesDir = Path.getRunningDirectory().subdir("resources").subdir("tables");
+    private final Path tablesDir = Files.tablesDir.copy();
 
     @GetMapping("/{filename}/download")
     public byte[] getTableDownload(@PathVariable String filename, HttpServletResponse response) {
