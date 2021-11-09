@@ -1,8 +1,11 @@
-package de.jupiterpi.wiesen.website;
+package de.jupiterpi.wiesen.website.pages;
 
 import de.jupiterpi.wiesen.website.files.Files;
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
+import org.commonmark.node.Node;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
 import org.springframework.http.CacheControl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -19,7 +22,14 @@ public class Loader {
     private final Path pagesDirectory = Files.pagesDir.copy();
 
     public String loadPage(String category, String name) {
-        return constructPage(new TextFile(pagesDirectory.copy().subdir(category).file(name+".html")).getFileForOutput());
+        String source = new TextFile(pagesDirectory.copy().subdir(category).file(name+".md")).getFileForOutput();
+
+        Parser parser = Parser.builder().build();
+        Node document = parser.parse(source);
+        HtmlRenderer renderer = HtmlRenderer.builder().build();
+        String content = renderer.render(document);
+
+        return constructPage(content);
     }
 
     private String constructPage(String content) {

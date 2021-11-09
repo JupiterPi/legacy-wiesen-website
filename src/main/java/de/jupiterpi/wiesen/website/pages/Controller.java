@@ -1,4 +1,4 @@
-package de.jupiterpi.wiesen.website;
+package de.jupiterpi.wiesen.website.pages;
 
 import de.jupiterpi.wiesen.website.analytics.Visit;
 import jupiterpi.tools.files.TextFile;
