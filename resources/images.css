@@ -11,7 +11,6 @@
 .img-gallery-item {
     height: calc(0.85 * var(--gallery-height));
     margin: calc(0.05 * var(--gallery-height));
-    //border: 2px solid grey;
     box-shadow: 0 0 7px 3px #868686;
 
     display: inline-block;

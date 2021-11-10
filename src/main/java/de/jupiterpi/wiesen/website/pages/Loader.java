@@ -1,6 +1,7 @@
 package de.jupiterpi.wiesen.website.pages;
 
 import de.jupiterpi.wiesen.website.files.Files;
+import de.jupiterpi.wiesen.website.pages.rendering.PageRenderer;
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
 import org.commonmark.node.Node;
@@ -17,18 +18,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Loader {
+    private PageRenderer pageRenderer = new PageRenderer();
+
     /* pages */
 
     private final Path pagesDirectory = Files.pagesDir.copy();
 
     public String loadPage(String category, String name) {
         String source = new TextFile(pagesDirectory.copy().subdir(category).file(name+".md")).getFileForOutput();
-
-        Parser parser = Parser.builder().build();
-        Node document = parser.parse(source);
-        HtmlRenderer renderer = HtmlRenderer.builder().build();
-        String content = renderer.render(document);
-
+        String content = pageRenderer.render(source);
         return constructPage(content);
     }
 
